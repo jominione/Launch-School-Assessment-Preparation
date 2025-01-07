@@ -1,0 +1,16 @@
+// What is the return value of the following statement? Why?
+
+let result = ['ant', 'bear', 'caterpillar'].pop().length;
+
+// Solution: Will output `11`.
+
+// Line 3 declares and initialises a global variable `result`.
+
+// `result` is assigned the return value of array method `pop` called by
+// array `['ant', 'bear', 'caterpillar']`.
+
+// `pop` method mutates the caller by removing the last element and returns 
+// the value in this case `'caterpillar'`.
+
+// Using method chaining `length` method is called on the string `'caterpillar'`
+// returning the value `11`.

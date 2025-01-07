@@ -1,0 +1,28 @@
+// What does the following function do?
+
+function doSomething(string) {
+  return string.split(' ').reverse().map((value) => value.length);
+}
+
+// Solution: 
+
+// On line 3 to 5 defines a function declaration `doSomething` with a parameter
+// `string` which presumably accepts string values as arguments.
+
+// The `string` parameter is first delimited by `' '` by `split` method which
+// returns an array of substrings split by the delimiter.
+
+// Utilising method chaining the returned array calls `reverse` method which
+// reverses the order of the elements in an array.
+
+// The reversed array then calls `map` method creates a new array by applying 
+// the callback function to each element of the array.
+
+// The callback function here has a parameter `value` that is passed the value
+// of the array as an argument and returns `value.length`.
+
+// Hence `map` returns an array with the length that corresponds to the substring
+// of the array.
+
+// That is `doSomething` returns in reverse order an array of lengths of substrings
+// of `string` in reverse order that is split by delimiter `' '`. 

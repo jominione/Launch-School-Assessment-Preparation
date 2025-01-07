@@ -1,0 +1,27 @@
+// What will the following code log to the console and why? Don't run it until 
+// you have tried to answer.
+
+let myWords = ['Hello'];
+myWords[0] = myWords[0].toUpperCase();
+
+console.log(myWords);
+
+// Solution: Will output `['HELLO']`.
+
+// On line 4 a global variable `myWords` is declared and initialised with array `['Hello'].
+
+// Referencing `myWords` by index `0` returns the value `'Hello'` which is
+// a string.
+
+// Using this string to call the method `toUpperCase` returns a string 
+// converted to uppercase letters does not mutate the original string because
+// strings are immutable.
+
+// However reassigning `myWords[0]` with the return value of calling `upperCase`
+// points `myWords[0]` to `HELLO`.
+
+// On line 7 when `console.log` is invoked by passing in the argument the value `myWords`
+// still points to the same reference but the value of the array has changed
+// to `HELLO`.
+
+// Hence outputs `['HELLO']`.

@@ -1,0 +1,22 @@
+// The following code differs slightly from the above code. What is the return
+// value of map in this case? Why?
+
+let result = [1, 2, 3].map(num => num * num);
+console.log(result);
+
+// Solution: Output `[1, 4, 9]`.
+
+// On line 4 a global variable is declared and initialised with return value
+// of calling array method `map` with array `[1, 2, 3]`.
+
+// The `map` method creates a new array by applying callback function that is
+// passed to it, to each element of the array.
+
+// The callback function passed to `map` is the function expression in form
+// of arrow function with parameter `num`.
+
+// Each value of `[1, 2, 3]` passed to the callback function returns the value
+// `num * num`, hence the `map` returns a new array `[1, 4, 9]`.
+
+// On line 5 when `console.log` is invoked passing it the value of `result`
+// it outputs `[1, 4, 9]`.

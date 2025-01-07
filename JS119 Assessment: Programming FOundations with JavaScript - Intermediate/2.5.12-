@@ -1,0 +1,34 @@
+// Create a deep copy of the following nested array.
+
+const arr = [
+  ['b', 'c', 'a'],
+  ['blue', 'black', 'green'],
+  { b: [2, 4, 6], c: [3, 6], d: [4]},
+  { e: [8], f: [6, 10] },
+];
+
+// Solution: 
+
+let string = JSON.stringify(arr);
+let deepCopy = JSON.parse(string);
+
+console.log(deepCopy.push('foo'));
+console.log(deepCopy[0].push('w'));
+console.log(deepCopy[2]['d'].push(25));
+
+console.log(arr);
+console.log(deepCopy);
+
+// Line 3 declares a global variable `arr` initialised with array.
+
+// Line 12 declares a global variable `string` initialised with return value
+// of calling `JSON.stringify` method with `arr` passed as an argument.
+
+// The `JSON.stringify` method converts JavaScript objects into strings hence
+// the return value of `arr` converted into a string is assigned to `string`.
+
+// On line 13 a global variable `deepCopy` is initialised with return value
+// of calling `JSON.parse` method with `string` passed as an argument.
+
+//  The `JSON.parse` method parses a string and returns a JavaScript object hence
+// `deepCopy` is assigned a deep copy of the `arr` array.

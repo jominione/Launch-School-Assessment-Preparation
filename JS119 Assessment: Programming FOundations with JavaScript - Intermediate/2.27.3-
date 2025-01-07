@@ -1,0 +1,39 @@
+// What will the following code log to the console and why? Don't run it until 
+// you have tried to answer.
+
+let color1 = "purple";
+let color2 = "pink";
+let colors = ["red", "green", "blue"];
+
+function updateColors(colors, color) {
+  colors.push(color);
+}
+
+updateColors(colors, color1);
+updateColors(colors, color2);
+console.log(colors);
+
+// Solution: Will output `["red", "green", "blue", "purple", "pink"]`.
+
+// The program defines and initialise global variable `color1` with primitive
+// value `"purple"`, `color2` with `"pink"` and `colors` with array `["red", "green", "blue"]`
+// on line 4 to 6.
+
+// On line 8 to 10 there is a function declaration `updateColors` with parameters
+// `colors` and `color`.
+
+// On line 9 `colors` calls the array method `push` with `color` passed as an
+// argument. This mutates the caller `colors`. There is no explicit `return`
+// statement so implict `return` of `undefined`.
+
+// Because `updateColors` mutates the array passed as argument to parameter `colors` 
+// it behaves like pass-by-value.
+
+// On line 12 when `updateColors` is invoked it mutates the global variable
+// `colors` by appending `"purple"` to end of array.
+// On line 13 when `updateColors` is invoked it mutates the global variable
+// `colors` by appending `"pink"` to end of array.
+
+// Since `colors` parameter references the same array as the global variable
+// `colors`, on line 14 when `console` is invoked with `colors` passed as argument 
+// it outputs `["red", "green", "blue", "purple", "pink"]`.

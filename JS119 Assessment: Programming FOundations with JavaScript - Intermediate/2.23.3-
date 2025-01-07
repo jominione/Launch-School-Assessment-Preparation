@@ -1,0 +1,20 @@
+// What will the following code log to the console and why? Don't run it until 
+// you have tried to answer.
+
+let myWords = ['Hello'];
+myWords.push('Goodbye');
+
+console.log(myWords);
+
+// Solution: Will output `['Hello', 'Goodbye']`.
+
+// On line 4 global variable is declared and initialised with value `['Hello']`.
+
+// On line 5 `myWords` calls the array method `push` which appends the argument
+// passed to it, `'Goodbye'` to the end of `myWords` and returns the new length
+// `2`.
+
+// `push` mutates the array that `myWords` points to so that it is now `['Hello', 'Goodbye']`.
+
+// Hence on line 7 when `console.log` is invoked with the argument passed to
+// it the value of `myWords` it outputs `['Hello', 'Goodbye']`.

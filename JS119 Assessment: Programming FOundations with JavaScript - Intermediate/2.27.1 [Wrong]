@@ -1,0 +1,43 @@
+// What will the following code log to the console and why? Don't run it until 
+// you have tried to answer.
+
+let color = "yellow";
+let colors = ["red", "green", "blue"];
+
+function updateColors(colors) {
+  colors.push(color);
+}
+
+updateColors(colors);
+console.log(colors);
+
+// Solution: Outputs `["red", "green", "blue"]`.
+
+// On line 4 and 5 global variable `color` and `colors` is declared and initialised
+// with the value `"yellow"` and `["red", "green", "blue"]`.
+
+// On line 7 to 9 a function declaration `updateColors` is defined with the
+// parameter `colors`.
+
+// The function body on line 8 has the parameter `colors` call the array
+// method `push` with the argument passed to it the value of the global
+// variable `color`. The global variable `color` is visible and accessible
+// within the function scope.
+
+// `push` method appends the value of `color` to the end of the parameter
+// `colors` which is visible and accessible within function scope.
+
+// The parameter `colors` shadows the global variable passed to `colors` 
+// as argument so is unaffected by mutating the paramter `colors` so behaves
+// like pass-in-value.
+
+// The function body ends without explict return so implicitly returns `undefined`.
+
+
+
+// On line 11 `updateColors` is invoked with argument passed the value of the
+// global variable `colors`. This invocation returns `undefined` but does not
+// affect the global variable 'colors' as it behaves like pass-in-value.
+
+// Hence on 12 when `console.log` is invoked by passing the argument the value of 
+// the global variable `colors` it outputs `["red", "green", "blue"]`.

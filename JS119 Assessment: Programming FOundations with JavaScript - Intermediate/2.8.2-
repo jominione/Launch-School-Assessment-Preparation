@@ -1,0 +1,13 @@
+// Which of the following values are valid keys for an object?
+
+// Solution:
+
+// * 1 - Valid
+// * '1' - Valid
+// * undefined - Valid 
+// * 'hello world' - Valid
+// * true - Valid
+// * 'true' - Valid
+
+// All of the above are valid keys because non-string values are coerced into
+// strings.

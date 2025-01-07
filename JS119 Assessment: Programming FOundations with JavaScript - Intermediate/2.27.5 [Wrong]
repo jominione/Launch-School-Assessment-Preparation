@@ -1,0 +1,57 @@
+// What will the following code log to the console and why? Don't run it until 
+// you have tried to answer.
+
+let color = "purple";
+let colors = ["red", "green", "blue"];
+
+function addColor(colors, color) {
+  colors.push(color);
+  return colors;
+}
+
+function removeColor(colors) {
+  color = colors.pop();
+  return colors;
+}
+
+let newColors = removeColor(colors);
+addColor(colors, color);
+console.log(newColors);
+console.log(color);
+
+// Solution: `["red", "green", "purple"]` and `purple`.
+
+// On line 4 and 5 global variables `color` declared and initialised with
+// primitive value `"purple"` and `colors` with reference type `["red", "green", "blue"]`
+// respectively.
+
+// On line 7 to 10 a function declaration `addColor` is declared with parameters
+// `colors` and `color`. This function declaration appends value of `color`
+// to `colors` which point to the same reference in memory as the passed
+// array so function behaves like pass-by-reference.
+
+// On line 12 to 15 a function declaration `removeColor` is declared with parameter
+// `colors`. This function declaration removes the last value of `colors` array
+// and reassigns the return value to the parameter `colors` and returns `colors`.
+// The `pop` method is a destructive function which to the same reference in memory as the passed
+// array so function behaves like pass-by-reference.
+
+// On line 17 a global variable `newColors` is declared by assigning the
+// return value of invoking `removeColor` and passing the array `colors` as
+// argument which is `["red", "green"]`.
+
+// Since this array is a reference type and points to same reference as the global
+// variable `colors`, the value of `colors` is now `["red", "green"]`.
+
+// On line line 18 `addColor` is invoked by passing in global variables `colors`
+// and `color` which returns the value `["red", "green", "purple"]`. This
+// value points to the same reference as `colors` so value of `colors` is
+// now `["red", "green", "purple"]`.
+
+// On line 19 when `console.log` is invoked by passing it the value of global
+// variables `newColors` since it points to the same reference as global variable
+// `colors` it outputs `["red", "green", "purple"]`.
+
+// Since global variable `color` is a primitive value it is immutable so on
+// line 20 when `console.log` is invoked by passing it value of `color` it
+// outputs `purple`.

@@ -1,0 +1,24 @@
+// Will the code below raise an error?
+
+let numbers = [1, 2, 3];
+numbers[6] = 5;
+
+// Solution: No it will not raise an error.
+
+// On line 3 global variable `numbers` is defined and initialised with array
+// of length value `3`.
+
+// On line 4 `numbers` is referenced with index `6` and assigned value `5`.
+// This increases the length of the array to 4.
+
+// The JavaScript engine will treat array slots 3 through 5 as empty slots.
+
+// 
+
+// Bonus:
+
+let numbers = [1, 2, 3];
+numbers[6] = 5;
+numbers[4];  // what will this line return?
+
+// Solution to Bonus:  Will return `undefined`.

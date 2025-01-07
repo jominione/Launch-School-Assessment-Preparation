@@ -1,0 +1,43 @@
+// Can you identify all of the variables, primitive values, and objects in 
+// the following code?
+
+function boo(scare) {
+  let myBoo = scare.toUpperCase() + "!!!";
+  console.log(myBoo);
+}
+
+const halloweenCollection = {
+  greet: "Happy Halloween",
+  scare: "Boo",
+  wish: "May all your pumpkins be glowing",
+};
+
+let myBoo = boo(halloweenCollection["greet"]);
+
+// Solution: 
+
+// Variables:
+// - function names: `boo`
+// - parameters: `scare`
+// - local variables: `myBoo`
+// - global object: `console`, `halloweenCollection`, `myBoo`, 
+
+
+// Primitive Values:
+// - On line 5: "!!!"; `scare.toUpperCase()` is `"HAPPY HALLOWEEN"` 
+// - On line 6: the value of local variable `myBoo` is return value of `scare.toUpperCase() + "!!!"` is `HAPPY HALLOWEEN!!!`.
+// - Object properties for `halloweenCollection`: `greet`, `scare`, `wish`;
+// - Object values for `halloweenCollection`: `"Happy Halloween"`, `"Boo"`
+//   `"May all your pumpkins be glowing"`;
+// - On line 12: `"greet"`, and the return value of `boo(halloweenCollection["greet"])` is `undefined`.
+//   and return value of `halloweenCollection["greet"]` is `"Happy Halloween"`.
+
+// Objects:
+// - function declaration: `boo`;
+// - global object: `console`;
+// - Value of global variable `halloweenCollection`: 
+// ```{
+//   greet: "Happy Halloween",
+//   scare: "Boo",
+//   wish: "May all your pumpkins be glowing",
+// };```

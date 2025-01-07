@@ -1,0 +1,54 @@
+// What will the following code log to the console and why? Don't run it until 
+// you have tried to answer.
+
+let color1 = "purple";
+let color2 = "pink";
+let colors = ["red", "green", "blue"];
+
+function updateColors(colors, color) {
+  colors.push(color);
+  return colors;
+}
+
+let newColors = updateColors(colors, color1);
+updateColors(newColors, color2);
+console.log(colors);
+
+// Solution: Will output `["red", "green", "blue"]`.
+
+// On lines 4 to 6 the global variables `color1`, `color2` and `colors`
+// are declared and initialised with the values `"purple"`, `"pink"` and
+// `["red", "green", "blue"]`.
+
+// On lines 8 to 11 the function declaration `updateColors` is defined with 
+// the parameters `colors` and `color`.
+
+// The parameters `colors` and `color` shadow the global variables passed to
+// them as arguments.
+
+// In the function body from lines 8 to 11, the parameter `colors` calls the
+// array method `push` which is passed argument the value of the parameter
+// `color`. `push` appends the value of `color` to the end of the parameter
+// `colors` which mutates the value that `colors` points to in memory.
+
+// The function body ends by explicitly returning the new value of the parameter
+// `colors`. Because the parameter 'colors` shadows the global variable passed
+// to it is unaffected by the mutation and so `updateColors` behaves like
+// pass-in-value.
+
+// On line 13 a global variable `newColors` is declared and initialised with
+// the return value of invoking `updateColors(colors, color1)`.
+
+// The return value of invoking `updateColors(colors, color1)` is `["red", "green", "blue", "purple"]`.
+
+// So `newColors` points to `["red", "green", "blue", "purple"]`.
+
+// On line 14 `updateColors` is invoked by passing in the value of `newColors` which
+// is `["red", "green", "blue", "purple"]` and `color2` which is `"pink"`.
+
+// It returns the value `["red", "green", "blue", "purple", "pink"]` but
+// because `updateColors` behaves like pass-in-value it has no effect on the
+// global variables passed to it as argument.
+
+// Hence on line 15 when `console.log` is invoked with argument passed is the
+// value of `colors` it outputs `["red", "green", "blue"]`.

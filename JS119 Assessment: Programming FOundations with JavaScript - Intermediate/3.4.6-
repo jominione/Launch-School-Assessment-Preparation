@@ -1,0 +1,38 @@
+// Examine the following code carefully. Can you identify all of the variables, 
+// primitive values, and objects that exist when this code executes?
+
+let arr = [1, 2, 3];
+let newArr = arr;
+
+const num = arr[0];
+let newNum = num;
+
+function double(num) {
+  return num * 2;
+}
+
+double(newNum);
+
+// Solution: 
+
+// Variables:
+// - Global Variables: `arr`, `newArr`, `num`, `newNum`;
+// - function name: `double`;
+// - parameter on line 10: `num`;
+
+// Primitive Values:
+// - values of array on line 4: `1`, `2`, `3`;
+// - indexes of array on line 4: `0`, `1`, `2`;
+// - Reference index of `arr` on line 7: `0`;
+// - The value of referencing `arr` with index `0`: `1`;
+// - The value of `newNum`: `1` - When assigning a variable that points primitive value
+//   to another variable it copies that primitive value.
+// - On line 11 inside the function body the value `2` is used.
+// - Parameter on line 14 receives copy of value of argument passed to it which is `1`.
+// - The return value of invoking `double` by passing it argument of value of 
+//   `newNum`: `2`;
+
+// Objects:
+// - Array referenced by `arr` and `newArr`: `[1, 2, 3]`;
+// - function declaration: `double`;
+// - There may be three pointers but only two distinct objects.

@@ -1,0 +1,24 @@
+// Without running the following code, what do you think it will output?
+
+function foo(bar, qux) {
+  console.log(bar);
+  console.log(qux);
+}
+
+foo('Hello');
+
+// Solution: The output is `Hello` and `undefined`.
+
+// From lines 3 to 6 is a function declaration `foo` with the parameters
+// `bar` and `bar`. The function body from lines 4 to 5 is invocation of
+// `console.log` with arguments passed being the value passed to the respective
+// parameters. The function block ends without an explicit return statement
+// so the implied return is `undefined`.
+
+// On line 8 is a function call of `foo` with the value `'Hello'` passed
+// to the parameter `bar`. There is no argument passed to the `qux` parameter.
+
+// When you pass to few arguments the parameters that correspond with the 
+// missing argument will default to receiving the value of `undefined`.
+
+// Hence the function invocation will output `Hello` and `undefined`.

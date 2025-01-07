@@ -1,0 +1,38 @@
+// What will the following code log to the console and why? Don't run it until 
+// you have tried to answer.
+
+function changeMyWord(word) {
+  console.log(word);
+  word = word.toUpperCase();
+}
+
+let myWord = 'Hello';
+changeMyWord(myWord);
+console.log(myWord);
+
+// Solution: Will output `Hello` and on new line `Hello`.
+
+// From line 4 to line 7 there is a function declaration `changeMyWord` defines
+// parameter `word`. On line 5 `changeMyWord` invokes `console` with parameter
+// `word` as argument.
+// On line 6 `word` calls the `toUpperCase` string method and the returned value 
+// is reassigned to `word`.
+// `word` parameter only has local scope so is not visible outside the
+// function.
+
+// Function declaration ends without an explicit `return` call.
+
+// Since primitive values are immutable and reassignment has no effect on
+// variables outside of the function scope `changeMyWord` behaves like pass-by-value.
+
+// On line 9 a global variable `myWord` is initialised with primitive value
+// `'Hello'`.
+
+// `changeMyWord` is invoked with `myWord` passed as an argument which outputs
+// `'Hello'` and implicit return `undefined`.
+
+// Since reassignment of the value of the parameter variable `word` has function
+// scope it has no effect on the global variable `myWord`.
+
+// On line 11 `console` is invoked with argument `myWord` which is unchanged
+// so outputs `Hello`.

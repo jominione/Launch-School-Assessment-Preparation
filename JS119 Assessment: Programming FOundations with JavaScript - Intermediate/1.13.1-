@@ -1,0 +1,22 @@
+// What is the return value of the filter method call below? Why?
+
+console.log([1, 2, 3].filter(num => 'hi'));
+
+// Solution:
+
+// On line 3 when `console.log` is called with array method `filter`.
+// `filter` method is called by array `[1, 2, 3]`. The argument for the `filter`
+// method is a callback function in form of arrow function omitting curly braces
+// and return statement since the function body consists of a single expression.
+
+// The callback function returns the boolean value of 'hi' which is true
+// for each value of the caller array. 
+
+// Thus `filter` method returns a new array the same value as the original
+// `[1, 2, 3]`.
+
+
+// Solution: The return value is [1, 2, 3]. filter performs selection based
+// on the truthiness of the callback's return value. In this case, the return
+// value is always 'hi', which is truthy. Therefore filter will return a new
+// array containing all of the elements in the original array.

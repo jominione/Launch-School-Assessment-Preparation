@@ -1,0 +1,32 @@
+// What will the following code output?
+
+let arr1 = [{ first: "value1" }, { second: "value2" }, 3, 4, 5];
+let arr2 = arr1.slice();
+arr2[0].first = 42;
+console.log(arr1);
+
+// Solution: Will output `[{ first: 42 }, { second: "value2" }, 3, 4, 5]`.
+
+// On line 3 a global variable `arr1` is declared with the value 
+// `[{ first: "value1" }, { second: "value2" }, 3, 4, 5]`.
+
+// On line 4 a global variable `arr2` is declared with the return value of
+// `arr1` calling the array method `slice` without any arguments passed.
+
+// The return value of invoking `arr1.slice()` is a shallow copy of `arr1`
+// `[{ first: "value1" }, { second: "value2" }, 3, 4, 5]`.
+
+// That is, `arr1` and `arr2` point to different references even if the value
+// looks the same.
+
+// Furthermore, while `arr1` and `arr2` point to different references the inner
+// objects within both arrays still point to the same references. That is only
+// top level of the array is copied.
+
+// Hence on line 5, the value `arr2[0].first` is reassigned to value `42` even
+// though `arr1` and `arr2` point to different arrays, the object values in both 
+// arrays point to the same reference so changing `arr2[0].first` also changes
+// the value in `arr1`.
+
+// Therefore, on line 6 when `console.log` is invoked by passing argument the
+// value of `arr1` it outputs `[{ first: 42 }, { second: "value2" }, 3, 4, 5]`.

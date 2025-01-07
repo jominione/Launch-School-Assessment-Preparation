@@ -1,0 +1,19 @@
+// What will the following code log to the console and why? Don't run it until 
+// you have tried to answer.
+
+let myWords = ['Hello'];
+myWords.concat(['Goodbye']);
+
+console.log(myWords);
+
+// Solution: Will output `['Hello']`.
+
+// On line 4 global variable `myWords` is declared and initialised with array
+// `['Hello']`.
+
+// On line 5, array method `concat` is called by `myWords` and passed argument
+// the array `['Goodbye']`. `concat` returns a new array with argument appended 
+// to end of caller array. `myWords` is unaffected.
+
+// Hence on line 7 when `console.log` is invoked with argument passed value
+// of `myWords` the output is `['Hello']`.

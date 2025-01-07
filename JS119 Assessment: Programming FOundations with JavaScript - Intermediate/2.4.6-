@@ -1,0 +1,44 @@
+// In the code shown below, identify the following items:
+// * the function arguments
+// * the function body
+// * the function declaration
+// * the function invocation
+// * the function name
+// * the function parameters
+// * the function return value
+// * the names of all variables in this program
+
+function multiplyNumbers(num1, num2, num3) {
+  let result = num1 * num2 * num3;
+  return result;
+}
+
+let product = multiplyNumbers(2, 3, 4);
+
+// Solution:
+
+// * the function arguments: On line 16 the primitive values `2, 3, 4`.
+// * the function body: The block of code in enclosing brackets from Line 11 to 14.
+// * the function declaration: Code encompassing line 11 to 14.
+// * the function invocation: On line 16 `multiplyNumbers(2, 3, 4);`.
+// * the function name: On line 11 `multiplyNumbers`.
+// * the function parameters: On line 11 `num1, num2, num3`.
+// * the function return value: 
+// * the names of all variables in this program:
+
+// The parameter variables `num1, num2, num3` on line 11. The local variable
+// `result` that has function scope on line 12.
+
+// On line 16 the global variable `product`.
+
+// Solution:
+
+// * the function arguments: 2, 3, 4
+// * the function body: Everyting between {} on Lines 11 to 14.
+// * the function declaration: Lines 11 to 14.
+// * the function invocation: Line 16 multiplyNumbers(2, 3, 4).
+// * the function name: multiplyNumbers
+// * the function parameters: num1, num2, num3
+// * the function return value: result
+// * the names of all variables in this program: result, num1, num2, num3,
+//                                               product, multiplyNumbers.

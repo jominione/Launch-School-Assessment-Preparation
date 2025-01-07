@@ -1,0 +1,18 @@
+// How does Array.prototype.fill work? Is it destructive? How can we find
+// out?
+
+let arr = [1, 2, 3, 4, 5];
+console.log(arr.fill(1, 1, 5));
+
+// Solution: The output is `[1, 1, 1, 1, 1]`.
+
+// On line 4 global variable `arr` is declared and initialised as `[1, 2, 3, 4, 5]`.
+
+// On line 5 `arr` calls `fill` method. The `fill` method takes a value and 
+// two indices and replaces the indices value in betwen those two given indices 
+// with the given value. It mutates the array.
+
+// Here the arguments passed is `1, 1, 5` so replaces the values between
+// index `1` and `5` with the value `1`.
+
+// So the output is `[1, 1, 1, 1, 1]`.

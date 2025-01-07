@@ -1,0 +1,54 @@
+// What will the following code log to the console and why? Don't run it until 
+// you have tried to answer.
+
+function capitalize() {
+  return word[0].toUpperCase() + word.slice(1);
+}
+
+function exclaim() {
+  return (word += "!!!");
+}
+
+let word = "hello";
+let capitalizedWord = capitalize(word);
+let exclaimedWord = exclaim(capitalizedWord);
+
+console.log(word);
+console.log(capitalizedWord);
+console.log(exclaimedWord);
+
+// Solution: Will output `"hello"`, `"Hello"` and `"hello!!!"`.
+
+// On line 4 to 6 is a function declaration `capitalize` defined with no parameters.
+
+// On line 8 to 10 is a function declaration `exclaim` defined with no parameters.
+
+// On line 12 a global variable `word` is declared and initialised with value `"hello"`.
+
+// On line 13 a global variable `capitalizedWord` is declared and initialised with 
+// return value of invoking `capitalise` with the value of the global variable
+// passed as an argument.
+
+// Since `capitalize` function declaration is not defined with a parameter
+// `word` argument is ignored.
+
+// However its body from line 4 to 6 returns the value of accessing the global variable
+// `word` capitalised. Since `word` is accessible and visible within the function
+// scope the invocation `capitalize(word)` returns the value `"Hello"` and this
+// value is assigned to `capitalizedWord`.
+
+// On line 14 a global variable `exclaimedWord` is declared and initialised with 
+// return value of invoking `exclaim` with the value of the global variable `capitalizedWord`
+// passed as an argument.
+
+// Since `exclaim` function declaration is not defined with a parameter
+// the `capitalizedWord` argument is ignored.
+
+// However its body from line 8 to 10 returns the value of accessing the global variable
+// `word` concatenated with the string value `"!!!"`. Since `word` is accessible 
+// and visible within the function scope the invocation `exclaim(capitalizedWord)`
+// returns the value `"hello!!!"` and this value is assigned to `exclaimedWord`.
+
+// Hence on line 16 to 18 where `console.log` is invoked by passing in the argument
+// respectively the value of the following global variables `word`, `capitalizedWord'
+// and `exclaimedWord` it outputs `"hello"`, `"Hello"` and `"hello!!!"`.

@@ -1,0 +1,22 @@
+// What will the following code log to the console and why? Don't run it until 
+// you have tried to answer.
+
+let myWord = 'Hello';
+myWord.concat(' there.');
+
+console.log(myWord);
+
+// Solution:
+
+// Will output `Hello`. On line 4 the program initialises a global
+// variable `myWord` with string value `'Hello'`.
+
+// On line 5 myWord is caller of string method `concat` with string `' there.'`
+// passed as an argument which returns `Hello there.`. Nothing is outputted
+// to console.
+
+// Because `myWord` points to primitive value and primitives are immutable
+// calling the `concat` method on `myWord` does not change the value of `myWord`.
+
+// Since the value of `myWord` has not changed on line 7 when `console` is 
+// called with argument `myWord` it outputs `Hello`.
